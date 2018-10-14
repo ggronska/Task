@@ -1,0 +1,18 @@
+<body>
+  <div class="container">
+    <header>
+      <h1>People and their hobbies</h1>
+      <form class="new-person">
+        <input type="text" name="text" id="p" placeholder="Type to add new person" />
+      </form>
+    </header>
+    <ul>
+    {{#each people}}
+      {{> person}}
+      <br>
+      <br>
+    {{/each}}
+</ul>
+</div>
+</body>
+ 
