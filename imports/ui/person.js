@@ -8,6 +8,13 @@ import './hobby.js';
 import './person.html';
 
 
+Template.person.helpers({
+  hobbies() {
+    console.warn(this.text)
+    return Hobbies.find().fetch()
+  }
+})
+
 Template.person.events({
 
  'submit.new-hobby'(event) {
