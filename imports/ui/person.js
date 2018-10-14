@@ -10,8 +10,7 @@ import './person.html';
 
 Template.person.helpers({
   hobbies() {
-    console.warn(this.text)
-    return Hobbies.find().fetch()
+    return Hobbies.find({person_id:this._id}).fetch()
   }
 })
 
@@ -22,8 +21,9 @@ Template.person.events({
     const target = event.target;
     const text = target.text.value;
       Hobbies.insert({
-      text,
-      createdAt: new Date(), // current time
+        person_id:this._id,
+        text,
+        createdAt: new Date(), // current time
     });
     // Clear form
     target.text.value = '';
