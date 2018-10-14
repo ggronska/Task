@@ -1,0 +1,10 @@
+<template name="person">  
+    <button class="delete">&times;</button>
+    <span class="text">{{text}}</span>
+	<form class="new-hobby">
+        <input type="text" name="text" placeholder="Type to add new hobby" />
+      	</form>
+	{{#each hobbies}}
+        {{> hobby}}
+      {{/each}}
+</template>
